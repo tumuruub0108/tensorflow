@@ -1,0 +1,26 @@
+# TensorFlow Core Learning Algorithms
+In this notebook we will walk through 4 fundemental machine learning algorithms. We will apply each of these algorithms to unique problems and datasets before highlighting the use cases of each.
+
+The algorithms we will focus on include:
+
+Linear Regression
+Classification
+Clustering
+Hidden Markov Models
+
+It is worth noting that there are many tools within TensorFlow that could be used to solve the problems we will see below. I have chosen the tools that I belive give the most variety and are easiest to use.
+
+# Linear Regression
+Linear regression is one of the most basic forms of machine learning and is used to predict numeric values.
+
+In this tutorial we will use a linear model to predict the survival rate of passangers from the titanic dataset.
+
+This section is based on the following documentation: https://www.tensorflow.org/tutorials/estimator/linear
+
+
+# How it Works
+Before we dive in, I will provide a very surface level explination of the linear regression algorithm.
+
+Linear regression follows a very simple concept. If data points are related linearly, we can generate a line of best fit for these points and use it to predict future values.
+
+Let's take an example of a data set with one feature and one label.
