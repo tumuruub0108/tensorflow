@@ -87,4 +87,18 @@ Below you'll see a seemingly complicated input function, this is straight from t
 # Creating the Model
 In this tutorial we are going to use a linear estimator to utilize the linear regression algorithm.
 
-Creating one is pretty easy! Have a look below
+we have to use keras
+
+Keras is a high-level API in TensorFlow designed to make building, training, and evaluating neural networks much easier and more intuitive
+
+Key Features of Keras Models
+
+    Easy to Build
+        You can define models layer by layer using Sequential, or more flexibly using the Functional API.
+    Supports Many Layers
+        Dense (fully connected), Convolutional (CNN), Recurrent (RNN), and more.
+    Integrated Training
+        Compile the model with a loss function and optimizer, then train with .fit().
+    Easy Evaluation and Prediction
+        Use .evaluate() for metrics like accuracy.
+        Use .predict() to get model predictions on new data.
