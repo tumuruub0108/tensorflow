@@ -1,0 +1,33 @@
+# what is Dense
+In TensorFlow / Keras, a Dense layer is the most common type of layer in a neural network. It’s also called a fully connected layer
+
+🔹 What it does
+    A Dense layer connects every input neuron to every output neuron.
+    Mathematically, it performs:
+        y=xW+b
+    where:
+        x = input vector
+        W = weight matrix (learned during training)
+        b = bias vector
+        y = output vector
+
+
+# When to use a Sequential model
+A Sequential model is appropriate for a plain stack of layers where each layer has exactly one input tensor and one output tensor.
+
+A Sequential model is like a straight line of blocks.
+Each block (layer) gets one input.
+Each block gives one output.
+Data just goes: Input → Layer 1 → Layer 2 → … → Output.
+
+
+# A Sequential model is not appropriate when:
+    Your model has multiple inputs or multiple outputs
+    Any of your layers has multiple inputs or multiple outputs
+    You need to do layer sharing
+    You want non-linear topology (e.g. a residual connection, a multi-branch model)
+
+
+
+# Specifying the input shape in advance
+Generally, all layers in Keras need to know the shape of their inputs in order to be able to create their weights. So when you create a layer like this, initially, it has no weights:

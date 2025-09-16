@@ -28,11 +28,9 @@ AI can be simple or complex
 1. Artificial Intelligence
 
 Definition: The broadest field. AI is the science of making machines capable of tasks that normally require human intelligence.
-
 Goal: To create systems that can think, reason, learn, and act intelligently.
 
 Examples:
-
 Chess-playing computer (Deep Blue)
 Virtual assistants (Siri, Alexa)
 Self-driving cars
@@ -42,11 +40,7 @@ Think of AI as the "big umbrella" covering all methods that make machines smar
 
 
 
-
 2. Machine Learning
-
-
-
 Definition: A subset of AI. It focuses on creating algorithms that allow computers to learn from data instead of being explicitly programmed with rules.
 
 How it works: The system improves its performance as it gets more data.
@@ -78,8 +72,7 @@ So, ML is one way to achieve AI.
 
 
 
-3.  Neural Networks 
-or Deep Learning
+3.  Neural Networks or Deep Learning
 
 Definition: A subset of Machine Learning, inspired by the human brain.
 
@@ -87,7 +80,6 @@ easy ==> a form of machine learning that uses a layered representation of data
 
 
 Structure: Composed of layers of “neurons” (nodes) connected by weights.
-
 Specialty: Very good at recognizing patterns (images, speech, natural language).
 
 Examples:
