@@ -90,6 +90,19 @@ ChatGPT (built on large neural networks)
 
 Neural networks are like the "engine" powering many modern ML applications, especially Deep Learning (neural networks with many layers).
 
-
-
 data is most important thing
+
+
+Layer in Machine Learning
+In machine learning, especially in neural networks / deep learning, a layer is a collection of nodes (neurons) that perform a specific transformation on input data.
+        Input Layer: Takes raw data as input.
+        Hidden Layer(s): Processes data through weighted connections and activation functions.
+        Output Layer: Produces the final prediction or output.
+
+Key Points:
+        Each layer transforms data from the previous layer.
+        More layers → deeper network → potentially more complex patterns can be learned.
+        Types of layers:
+                Dense / Fully Connected Layer: Each neuron connects to every neuron in the next layer.
+                Convolutional Layer (CNN): Extracts features from images.
+                Recurrent Layer (RNN): Processes sequential data

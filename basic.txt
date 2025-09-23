@@ -1,0 +1,82 @@
+# Scalar
+A scalar is just a single number.
+No dimensions (rank 0 tensor in TensorFlow).
+Shape: []
+
+👉 Examples:
+    5, 3.14, e, temperature = 37.
+
+    import tensorflow as tf
+
+    scalar = tf.constant(5)
+    print(scalar)        # tf.Tensor(5, shape=(), dtype=int32)
+    print(scalar.shape)  # ()
+
+
+# Vector
+A vector is an ordered list of numbers (1D array).
+    One dimension (rank 1 tensor in TensorFlow).
+    Shape: [n]
+
+It is similar to one-dimensional arrays. 
+    
+👉 Examples:
+    A point in 3D space -> [x, y, z] = [2, 5, -1]
+    Velocities, embeddings, features
+
+vector = tf.constant([1, 2, 3])
+print(vector)        # tf.Tensor([1 2 3], shape=(3,), dtype=int32)
+print(vector.shape)  # (3,)
+
+🔹 Key Difference
+
+Scalar → just a number (no direction, no magnitude beyond itself).
+Vector → collection of numbers that can represent direction and magnitude in space.
+
+# Matrix
+A matrix is a 2D array of numbers arranged in rows and columns.
+    Rank = 2 (two axes: rows and columns)
+    Shape = [m, n]
+
+👉 Example:
+    [
+    1 2 3 
+    4 5 6
+    ]
+
+This has shape (2, 3) → 2 rows, 3 columns.
+import tensorflow as tf
+
+matrix = tf.constant([[1, 2, 3], [4, 5, 6]])
+print(matrix)        # shape=(2, 3)
+print(matrix.shape)  # (2, 3)
+
+
+
+# Shape
+In TensorFlow, a shape refers to the dimensions of a tensor — essentially the “structure” or “size” of the data stored inside that tensor.
+
+# What is a Tensor?
+A tensor is just a multi-dimensional array (like a generalization of scalars, vectors, and matrices).
+    Scalar → rank 0 tensor → shape []
+    Vector → rank 1 tensor → shape [n]
+    Matrix → rank 2 tensor → shape [m, n]
+    Higher dimensions → rank k tensor → shape [d1, d2, ..., dk]
+
+# Shape in TensorFlow
+    The shape describes:
+        Rank (number of dimensions)
+        Size of each dimension
+Example
+
+# Scalar
+s = tf.constant(5)
+print(s.shape)  # ()
+
+# Vector
+v = tf.constant([1, 2, 3])
+print(v.shape)  # (3,)
+
+# Matrix
+m = tf.constant([[1, 2, 3], [4, 5, 6]])
+print(m.shape)  # (2, 3)
