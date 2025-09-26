@@ -31,3 +31,94 @@ Data just goes: Input → Layer 1 → Layer 2 → … → Output.
 
 # Specifying the input shape in advance
 Generally, all layers in Keras need to know the shape of their inputs in order to be able to create their weights. So when you create a layer like this, initially, it has no weights:
+
+1. What is the Functional API?
+In Keras/TensorFlow, there are two main ways to build neural networks:
+    Sequential API → Simple "stack" of layers, one after another.
+
+    Functional API → More flexible; lets you build models with multiple inputs, multiple outputs, shared layers, or non-linear architectures (not just a straight stack).
+
+Think of the Functional API as drawing a diagram of your model instead of just stacking blocks.
+
+2. Why Use Functional API?
+Use it when your model is not just a straight line. For example:
+    Models with multiple inputs (e.g., images + text).
+
+    Models with multiple outputs (e.g., predicting age and gender).
+
+    Models with skip connections / residuals (used in ResNet).
+
+    Models where layers are reused in multiple places.
+
+3. How it Works (Step by Step)
+Instead of stacking layers like Sequential, you connect them like a flow:
+
+from tensorflow import keras
+from tensorflow.keras import layers
+
+# Define input layer
+inputs = keras.Input(shape=(784,))  # example: flattened 28x28 image
+
+Pass input through layers:
+Each layer is called like a function, passing data along.
+x = layers.Dense(64, activation="relu")(inputs)
+x = layers.Dense(64, activation="relu")(x)
+
+Define output(s):
+outputs = layers.Dense(10, activation="softmax")(x)
+
+Create the model:
+model = keras.Model(inputs=inputs, outputs=outputs)
+
+
+4. Example: Multi-Input, Multi-Output Model
+Suppose you want to build a system that:
+    Takes two inputs:
+        Image data
+        Text data
+
+    Produces two outputs:
+        Class label
+        Sentiment score
+
+# Two inputs
+image_input = keras.Input(shape=(64, 64, 3), name="image")
+text_input = keras.Input(shape=(100,), name="text")
+
+# Image branch
+x1 = layers.Conv2D(32, (3,3), activation="relu")(image_input)
+x1 = layers.Flatten()(x1)
+
+# Text branch
+x2 = layers.Dense(64, activation="relu")(text_input)
+
+# Combine
+combined = layers.concatenate([x1, x2])
+
+# Two outputs
+class_output = layers.Dense(10, activation="softmax", name="class")(combined)
+sentiment_output = layers.Dense(1, activation="sigmoid", name="sentiment")(combined)
+
+# Model
+model = keras.Model(inputs=[image_input, text_input],
+                    outputs=[class_output, sentiment_output])
+
+
+5. Advantages
+
+✅ Very flexible – you can draw almost any architecture.
+✅ Easy to reuse layers or build shared feature extractors.
+✅ Closer to how research papers describe architectures (graphs, not stacks).
+
+
+
+# Deep path (Deep model):
+A standard neural network with multiple hidden layers that automatically learns feature representations.
+👉 Good at generalizing from raw or high-dimensional data (images, text, embeddings).
+
+# Wide path (Wide model):
+A linear model (like logistic regression or linear regression) that directly connects features to the output without many hidden layers.
+👉 Good at memorizing explicit feature interactions (e.g., "user is from Korea AND likes K-pop → recommend K-drama").
+
+
+                
