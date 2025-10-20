@@ -1,2 +1,7 @@
 import tensorflow as tf  # now import the tensorflow module
-print(tf.version)  # make sure the version is 2.x
+
+
+mnist = tf.keras.datasets.mnist
+
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
