@@ -19,7 +19,6 @@ X_train, X_valid, X_test = X_train / 255., X_valid / 255., X_test / 255.
 class_names = ["T-shirt/top", "Trouser", "Pullover", "Dress", "Coat", "Sandal", "Shirt", "Sneaker", "Bag", "Ankle boot"]
 
 tf.random.set_seed(42)
-model = tf.keras.Sequential()
 
 model = tf.keras.Sequential([
     tf.keras.layers.Flatten(input_shape=[28, 28]),
@@ -33,12 +32,10 @@ history = model.fit(X_train, y_train, epochs=30,validation_data=(X_valid, y_vali
 
 
 """
-
 pd.DataFrame(history.history).plot(
 figsize=(8, 5), xlim=[0, 29], ylim=[0, 1], grid=True, xlabel="Epoch",
 style=["r--", "r--.", "b-", "b-*"])
 plt.show()
-
 """
 
 print(model.evaluate(X_test, y_test))
@@ -47,4 +44,6 @@ X_new = X_test[:3]
 y_proba = model.predict(X_new)
 print(y_proba.round(2))
 
-# 502
+
+y_pred = y_proba.argmax(axis=-1)
+print(y_pred)
