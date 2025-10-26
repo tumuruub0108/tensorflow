@@ -11,3 +11,4 @@ https://colab.research.google.com/drive/14EJAQ8_UZx-BtcItSRTYBvPXSnUeQUiJ
 
 # nlp lesson link
 https://www.youtube.com/watch?v=LxY5eKGjMgc&list=PLuFfLNbORRMWaEFkzH2Huni4lXTi8RxqM&index=7
+https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews
